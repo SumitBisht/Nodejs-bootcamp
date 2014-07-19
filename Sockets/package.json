@@ -1,0 +1,16 @@
+{
+  "name": "ExpressMe",
+  "version": "0.0.0",
+  "description": "this is a sample app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "socket.io": "^0.9.16"
+  },
+  "author": "sumit bisht",
+  "license": "ISC"
+}
