@@ -1,5 +1,5 @@
 var express = require('express'),
-  routes = require('routes'),
+  routes = require('./routes'),
   http = require('http'),
   path = require('path'),
   fs = require('fs');
@@ -7,13 +7,15 @@ var express = require('express'),
   var app = express();
 
   app.set('port', process.env.PORT || 8080);
-  app.set('view', path.join(__dirname, 'views'));
+  app.locals.basedir = path.join(__dirname, 'views');
   app.set('view engine', 'jade');
-  app.use(express.logger('dev'));
+  app.use(express.logger());
   app.use(express.json());
-  app.use(expres.urlencoded());
+  app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(app.router);
+  app.use(express.json());
+  app.use(express.bodyParser());
   app.use(express.static(path.join(__dirname, 'public')));
 
   if('development' == app.get('env')){
@@ -24,6 +26,7 @@ var express = require('express'),
 
   app.get('/', routes.index);
   app.get('/ping', routes.ping);
+  app.post('/', routes.search);
 
   http.createServer(app).listen(app.get('port'), function(){
   	console.log('Express server started on port: ', app.get('port'));

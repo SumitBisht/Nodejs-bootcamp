@@ -15,7 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "Sentimental": "^1.0.1",
-    "express": "^4.6.1",
+    "express": "^3.6.1",
+    "jade": "^1.4.2",
     "twit": "^1.1.18"
   }
 }
