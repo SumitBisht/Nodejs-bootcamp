@@ -1,0 +1,16 @@
+{
+  "name": "twitter-sentiment-analysis",
+  "version": "0.0.1",
+  "description": "This is a node.js application that performs sentiment analysis over twitter",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "twitter",
+    "ml",
+    "sentiment-analysis"
+  ],
+  "author": "sumit bisht",
+  "license": "MIT"
+}
