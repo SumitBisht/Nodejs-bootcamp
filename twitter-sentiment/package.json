@@ -12,5 +12,10 @@
     "sentiment-analysis"
   ],
   "author": "sumit bisht",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "Sentimental": "^1.0.1",
+    "express": "^4.6.1",
+    "twit": "^1.1.18"
+  }
 }

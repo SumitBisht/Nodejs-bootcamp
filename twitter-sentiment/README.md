@@ -1,0 +1,1 @@
+Provides sentiment analysis for twitter data.
