@@ -1,3 +1,5 @@
+var twit = require('twit'),
+    sentimental = require('Sentimental');
 
 exports.index = function(req, res){
 	res.render('index', {title: 'twitter sentiment analysis'});
@@ -6,7 +8,8 @@ exports.ping = function(req, res){
 	res.send('pong', 200);
 }
 exports.search = function(req, res){
-  var choices = JSON.parse(req.body.choices);
+  console.log("Body:"+ JSON.stringify(req.body));
+  var choices = [req.body.choice1, req.body.choice2];
   console.log(choices);
   var today = new Date();
   // establish the twitter config (grab your keys at dev.twitter.com)
@@ -44,12 +47,14 @@ exports.search = function(req, res){
           highestChoice = choices[i];
           console.log("winner:",choices[i])
         }
-        console.log("")
       });
     })(i)
   }
   // send response back to the server side; why the need for the timeout?
-  setTimeout(function() { res.end(JSON.stringify({'score': highestScore, 'choice': highestChoice})) }, 5000);
+  setTimeout(function() {
+    // res.end(JSON.stringify({'score': highestScore, 'choice': highestChoice}))
+    res.render('result',{'score': highestScore, 'choice': highestChoice}); 
+  }, 5000);
 }
 
 function performAnalysis(tweets){
