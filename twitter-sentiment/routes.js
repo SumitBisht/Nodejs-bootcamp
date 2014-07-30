@@ -61,6 +61,7 @@ function performAnalysis(tweets){
 	var results =0;
 	for(i=0; i<tweets.length; i++){
 		tweet = tweets[i]['text'];
+    console.log('For tweet: '+tweet);
     retweets = tweets[i]['retweet_count'];
     favorites = tweets[i]['favorite_count'];
     // remove the hastag from the tweet text
@@ -70,6 +71,7 @@ function performAnalysis(tweets){
     // calculate score
     results += score;
     if(score > 0){
+      console.log('Positive Sentiment obtained');
       if(retweets > 0) {
         results += (Math.log(retweets)/Math.log(2));
       }
@@ -78,6 +80,7 @@ function performAnalysis(tweets){
       }
     }
     else if(score < 0){
+      console.log('Negative Sentiment obtained');
       if(retweets > 0) {
         results -= (Math.log(retweets)/Math.log(2));
       }
