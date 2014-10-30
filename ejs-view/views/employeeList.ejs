@@ -1,0 +1,11 @@
+<%include header%>
+<h2>Employee List</h2>
+<b>Id, Name, Age, Designation</b>
+<ul>
+<% data.forEach(function(emp) { %>
+  <li>
+    <%=emp.id%>, <%=emp.name%>, <%=emp.age%>, <%=emp.designation%>
+  </li>
+<%});%>
+</ul>
+<%include footer%>

@@ -1,10 +1,11 @@
 {
     "name": "ejs-view"
-  , "version": "0.0.1"
-  , "description": "A sample app to demonstrate ejs views"
+  , "version": "0.1.1"
+  , "description": "A sample app to demonstrate ejs views together with mysql data"
   , "private": true
   , "dependencies": {
       "express": "2.5.8"
     , "ejs": ">= 0.0.1"
+    , "mysql": "*"
   }
 }
